@@ -1,4 +1,4 @@
-lovelyFriday
-============
+# lovelyFriday
 
-A Symfony project created on May 22, 2016, 11:05 am.
+Burger order management
+
