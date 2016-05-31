@@ -16,5 +16,5 @@ class DefaultControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertContains('The code to manage the order is: ', $crawler->filter('p')->text());
     }
-    
+
 }
