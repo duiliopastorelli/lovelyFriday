@@ -36,7 +36,7 @@ class OrderController extends Controller
      */
     public function createOrderAction($idOrder, Request $request)
     {
-        return $this->render('order/manageOrder.html.twig');
+        return $this->render('order/createOrder.html.twig');
     }
 
     /**
