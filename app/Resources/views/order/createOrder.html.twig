@@ -3,7 +3,12 @@
 {% block content %}
     <div class="container">
         <p>a</p>
-        <h1 class="header">Create Order</h1>
+        <h1 class="page-header">Create Order</h1>
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+
+        <h2 class="page-header">Fill the fields and be happy!</h2>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
     </div><!-- /.container -->
 {% endblock %}

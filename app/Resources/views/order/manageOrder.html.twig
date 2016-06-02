@@ -2,8 +2,36 @@
 
 {% block content %}
     <div class="container">
-        <p>a</p>
-        <h1 class="header">Manage Order</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-header">Orders</h1>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Order</th>
+                        <th>How cooked</th>
+                        <th>Note</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <th scope="row">{{ order.userName }}</th>
+                        <td>{{ order.plate }}</td>
+                        <td>{{ order.cookLevel }}</td>
+                        <td>{{ order.note }}</td>
+                        <td>
+                            <a class="btn btn-success" href="#" role="button">Done</a>
+                            <a class="btn btn-warning" href="#" role="button">Amendment</a>
+                            <a class="btn btn-danger" href="#" role="button">Reject</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div><!-- /.row -->
     </div><!-- /.container -->
 {% endblock %}
