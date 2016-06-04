@@ -43,7 +43,6 @@ class OrderController extends Controller
 
                 var_dump($idOrderCheck);
                 $idManOrder = $idOrderCheck->getIdManOrder();
-                var_dump($idManOrder);
 
                 //Add the username to the db
                 //Get Data from the form
@@ -91,16 +90,43 @@ class OrderController extends Controller
     }
 
     /**
-     * @Route("/newOrder", name="newOrder")
+     * @Route("/newEvent/", name="newEvent")
      */
-    public function orderAction(Request $request)
+    public function newEventAction(Request $request)
     {
-        $order = new OrderBundle();
-        $manOrderCode = $order->getManCode();
-        $joinOrderCode = $order->getJoinCode();
+        $eventStart = new Orders;
+        $form = $this->createFormBuilder($eventStart)
+            ->add('userName', TextType::class, array('label' => 'Pick an user name:','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('submit', SubmitType::class, array('label' => 'Generate the event! ->','attr' => array('class' => 'btn btn-success center-block','style' => 'margin-bottom:15px')))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        //Check if the POST has valid value
+        if($form->isSubmitted() && $form->isValid()){
+            do {
+                $isUnique = false;
+
+                //Generate random
+                $generatedIdManOrder = OrderBundle::getCode();
+
+                $idManOrderCheck = $this->getDoctrine()
+                    ->getRepository('OrderBundle:Orders')
+                    ->findOneByidManOrder($generatedIdManOrder);
+
+                if ($idManOrderCheck === null){
+                    $isUnique = true;
+                }
+            } while ($isUnique===false);
+
+            //Redirect to the management page
+            return $this->redirectToRoute('manageOrder', array(
+                'idManOrder' => $generatedIdManOrder
+            ));
+        }
+        
         return $this->render('order/createOrder.html.twig', array(
-            "manOrderCode"=>$manOrderCode,
-            "joinOrderCode"=>$joinOrderCode
+            'form' => $form->createView()
         ));
     }
 

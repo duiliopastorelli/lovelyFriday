@@ -18,13 +18,8 @@ class OrderBundle extends Bundle
     }
 
     //Get for the management code
-    public function getManCode() {
-        return $this->generateNewCode();
-    }
-
-    //Get for the user code
-    public function getJoinCode() {
-        return $this->generateNewCode();
+    public function getCode() {
+        return self::generateNewCode();
     }
 
 }
