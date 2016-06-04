@@ -19,10 +19,11 @@ class OrderController extends Controller
     public function indexAction(Request $request)
     {
         //Generate the form to get the order id from the user
-        $event = new Orders;
-        $form = $this->createFormBuilder($event)
-            ->add('idOrder', TextType::class, array('label' => 'Insert your code here:','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
-            ->add('submit', SubmitType::class, array('label' => 'GO! ->','attr' => array('class' => 'btn btn-primary','style' => 'margin-bottom:15px')))
+        $orderStart = new Orders;
+        $form = $this->createFormBuilder($orderStart)
+            ->add('userName', TextType::class, array('label' => 'Pick an user name:','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('idOrder', TextType::class, array('label' => 'Insert your "order code" here:','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('submit', SubmitType::class, array('label' => 'GO! ->','attr' => array('class' => 'btn btn-success center-block','style' => 'margin-bottom:15px')))
             ->getForm();
 
         $form->handleRequest($request);
@@ -39,6 +40,24 @@ class OrderController extends Controller
                 ->findOneByidOrder($idSubmitted);
 
             if($idOrderCheck != null){
+
+                var_dump($idOrderCheck);
+                $idManOrder = $idOrderCheck->getIdManOrder();
+                var_dump($idManOrder);
+
+                //Add the username to the db
+                //Get Data from the form
+                $idOrder = $idSubmitted;
+                $userName = $form['userName']->getData();
+
+                //Prepare the data to persist them
+                $orderStart->setIdManOrder($idManOrder);
+                $orderStart->setIdOrder($idOrder);
+                $orderStart->setUserName($userName);
+
+                $persist = $this->getDoctrine()->getManager();
+                $persist->persist($orderStart);
+                $persist->flush();
 
                 //Redirect to the Order page
                 return $this->redirectToRoute('createOrder', array(
