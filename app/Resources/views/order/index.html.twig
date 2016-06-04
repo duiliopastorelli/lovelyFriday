@@ -1,9 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <div class="container">
-        <p>a</p>
-        <h1 class="header">Home Page</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-    </div><!-- /.container -->
+    <h1 class="page-header">Home Page</h1>
+    <p class="lead">Hungry? Don't worry, you're just a few steps from your meal!</p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <p>Do you have an "order code"? Put it in the field and tap "GO" to create your order.</p>
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+
+        <div class="col-md-6">
+            <p>If you don't have an order code, it means that as somebody has to create the event, <b>that one</b> is you!</p>
+
+            <p>Who create an event has the right to manage it, and the duty of share the order code with the others.</p>
+            <p><a class="btn btn-success">Let's start!</a></p>
+        </div>
+    </div>
 {% endblock %}

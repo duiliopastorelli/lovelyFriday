@@ -6,6 +6,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class OrderBundle extends Bundle
 {
+    //Generate random codes for the orders
     private function generateNewCode($length = 20) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
@@ -15,12 +16,15 @@ class OrderBundle extends Bundle
         }
         return $randomString;
     }
-    
+
+    //Get for the management code
     public function getManCode() {
         return $this->generateNewCode();
     }
 
+    //Get for the user code
     public function getJoinCode() {
         return $this->generateNewCode();
     }
+
 }
