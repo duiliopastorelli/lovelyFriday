@@ -52,24 +52,86 @@ class Orders
     /**
      * @var string
      *
-     * @ORM\Column(name="plate", type="string", length=50, nullable=true)
+     * @ORM\Column(name="plate1", type="string", length=50, nullable=true)
      */
-    private $plate;
+    private $plate1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cookLevel", type="string", length=10, nullable=true)
+     * @ORM\Column(name="cookLevel1", type="string", length=10, nullable=true)
      */
-    private $cookLevel;
+    private $cookLevel1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="note", type="string", length=150, nullable=true)
+     * @ORM\Column(name="note1", type="string", length=150, nullable=true)
      */
-    private $note;
+    private $note1;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="plate2", type="string", length=50, nullable=true)
+     */
+    private $plate2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cookLevel2", type="string", length=10, nullable=true)
+     */
+    private $cookLevel2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="note2", type="string", length=150, nullable=true)
+     */
+    private $note2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="plate3", type="string", length=50, nullable=true)
+     */
+    private $plate3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cookLevel3", type="string", length=10, nullable=true)
+     */
+    private $cookLevel3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="note3", type="string", length=150, nullable=true)
+     */
+    private $note3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="plate4", type="string", length=50, nullable=true)
+     */
+    private $plate4;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cookLevel4", type="string", length=10, nullable=true)
+     */
+    private $cookLevel4;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="note4", type="string", length=150, nullable=true)
+     */
+    private $note4;
 
     /**
      * Get id
@@ -223,5 +285,29 @@ class Orders
     public function getNote()
     {
         return $this->note;
+    }
+
+    /**
+     * Set creationDate
+     *
+     * @param \DateTime $creationDate
+     *
+     * @return Orders
+     */
+    public function setCreationDate($creationDate)
+    {
+        $this->creationDate = $creationDate;
+
+        return $this;
+    }
+
+    /**
+     * Get creationDate
+     *
+     * @return \DateTime
+     */
+    public function getCreationDate()
+    {
+        return $this->creationDate;
     }
 }

@@ -52,24 +52,86 @@ class Orders
     /**
      * @var string
      *
-     * @ORM\Column(name="plate", type="string", length=50, nullable=true)
+     * @ORM\Column(name="plate1", type="string", length=50, nullable=true)
      */
-    private $plate;
+    private $plate1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cookLevel", type="string", length=10, nullable=true)
+     * @ORM\Column(name="cookLevel1", type="string", length=10, nullable=true)
      */
-    private $cookLevel;
+    private $cookLevel1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="note", type="string", length=150, nullable=true)
+     * @ORM\Column(name="note1", type="string", length=150, nullable=true)
      */
-    private $note;
+    private $note1;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="plate2", type="string", length=50, nullable=true)
+     */
+    private $plate2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cookLevel2", type="string", length=10, nullable=true)
+     */
+    private $cookLevel2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="note2", type="string", length=150, nullable=true)
+     */
+    private $note2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="plate3", type="string", length=50, nullable=true)
+     */
+    private $plate3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cookLevel3", type="string", length=10, nullable=true)
+     */
+    private $cookLevel3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="note3", type="string", length=150, nullable=true)
+     */
+    private $note3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="plate4", type="string", length=50, nullable=true)
+     */
+    private $plate4;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cookLevel4", type="string", length=10, nullable=true)
+     */
+    private $cookLevel4;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="note4", type="string", length=150, nullable=true)
+     */
+    private $note4;
 
     /**
      * Get id
@@ -247,5 +309,293 @@ class Orders
     public function getCreationDate()
     {
         return $this->creationDate;
+    }
+
+    /**
+     * Set plate1
+     *
+     * @param string $plate1
+     *
+     * @return Orders
+     */
+    public function setPlate1($plate1)
+    {
+        $this->plate1 = $plate1;
+
+        return $this;
+    }
+
+    /**
+     * Get plate1
+     *
+     * @return string
+     */
+    public function getPlate1()
+    {
+        return $this->plate1;
+    }
+
+    /**
+     * Set cookLevel1
+     *
+     * @param string $cookLevel1
+     *
+     * @return Orders
+     */
+    public function setCookLevel1($cookLevel1)
+    {
+        $this->cookLevel1 = $cookLevel1;
+
+        return $this;
+    }
+
+    /**
+     * Get cookLevel1
+     *
+     * @return string
+     */
+    public function getCookLevel1()
+    {
+        return $this->cookLevel1;
+    }
+
+    /**
+     * Set note1
+     *
+     * @param string $note1
+     *
+     * @return Orders
+     */
+    public function setNote1($note1)
+    {
+        $this->note1 = $note1;
+
+        return $this;
+    }
+
+    /**
+     * Get note1
+     *
+     * @return string
+     */
+    public function getNote1()
+    {
+        return $this->note1;
+    }
+
+    /**
+     * Set plate2
+     *
+     * @param string $plate2
+     *
+     * @return Orders
+     */
+    public function setPlate2($plate2)
+    {
+        $this->plate2 = $plate2;
+
+        return $this;
+    }
+
+    /**
+     * Get plate2
+     *
+     * @return string
+     */
+    public function getPlate2()
+    {
+        return $this->plate2;
+    }
+
+    /**
+     * Set cookLevel2
+     *
+     * @param string $cookLevel2
+     *
+     * @return Orders
+     */
+    public function setCookLevel2($cookLevel2)
+    {
+        $this->cookLevel2 = $cookLevel2;
+
+        return $this;
+    }
+
+    /**
+     * Get cookLevel2
+     *
+     * @return string
+     */
+    public function getCookLevel2()
+    {
+        return $this->cookLevel2;
+    }
+
+    /**
+     * Set note2
+     *
+     * @param string $note2
+     *
+     * @return Orders
+     */
+    public function setNote2($note2)
+    {
+        $this->note2 = $note2;
+
+        return $this;
+    }
+
+    /**
+     * Get note2
+     *
+     * @return string
+     */
+    public function getNote2()
+    {
+        return $this->note2;
+    }
+
+    /**
+     * Set plate3
+     *
+     * @param string $plate3
+     *
+     * @return Orders
+     */
+    public function setPlate3($plate3)
+    {
+        $this->plate3 = $plate3;
+
+        return $this;
+    }
+
+    /**
+     * Get plate3
+     *
+     * @return string
+     */
+    public function getPlate3()
+    {
+        return $this->plate3;
+    }
+
+    /**
+     * Set cookLevel3
+     *
+     * @param string $cookLevel3
+     *
+     * @return Orders
+     */
+    public function setCookLevel3($cookLevel3)
+    {
+        $this->cookLevel3 = $cookLevel3;
+
+        return $this;
+    }
+
+    /**
+     * Get cookLevel3
+     *
+     * @return string
+     */
+    public function getCookLevel3()
+    {
+        return $this->cookLevel3;
+    }
+
+    /**
+     * Set note3
+     *
+     * @param string $note3
+     *
+     * @return Orders
+     */
+    public function setNote3($note3)
+    {
+        $this->note3 = $note3;
+
+        return $this;
+    }
+
+    /**
+     * Get note3
+     *
+     * @return string
+     */
+    public function getNote3()
+    {
+        return $this->note3;
+    }
+
+    /**
+     * Set plate4
+     *
+     * @param string $plate4
+     *
+     * @return Orders
+     */
+    public function setPlate4($plate4)
+    {
+        $this->plate4 = $plate4;
+
+        return $this;
+    }
+
+    /**
+     * Get plate4
+     *
+     * @return string
+     */
+    public function getPlate4()
+    {
+        return $this->plate4;
+    }
+
+    /**
+     * Set cookLevel4
+     *
+     * @param string $cookLevel4
+     *
+     * @return Orders
+     */
+    public function setCookLevel4($cookLevel4)
+    {
+        $this->cookLevel4 = $cookLevel4;
+
+        return $this;
+    }
+
+    /**
+     * Get cookLevel4
+     *
+     * @return string
+     */
+    public function getCookLevel4()
+    {
+        return $this->cookLevel4;
+    }
+
+    /**
+     * Set note4
+     *
+     * @param string $note4
+     *
+     * @return Orders
+     */
+    public function setNote4($note4)
+    {
+        $this->note4 = $note4;
+
+        return $this;
+    }
+
+    /**
+     * Get note4
+     *
+     * @return string
+     */
+    public function getNote4()
+    {
+        return $this->note4;
     }
 }

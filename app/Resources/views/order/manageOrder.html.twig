@@ -5,6 +5,17 @@
         <div class="row">
             <div class="col-md-12">
                 <h1 class="page-header">Orders</h1>
+
+                <div class="alert alert-success">
+                    <p>Hey Manager! Remember to share with the other folks the "Order Code". They need it to join the party!</p>
+                    <p class="lead">Order code: {{ idOrder }}</p>
+                </div>
+
+                <div class="alert alert-danger">
+                    <p>And this one is the code to manage the event. <b>DON'T</b> share it, just save it somewhere as it's your key to return to this page again!!!</p>
+                    <p class="lead">Management code: {{ idManOrder }}</p>
+                </div>
+
                 <table class="table table-striped">
                     <thead>
                     <tr>
@@ -17,17 +28,33 @@
                     </thead>
                     <tbody>
                     {% for order in orders %}
-                    <tr>
-                        <th scope="row">{{ order.userName }}</th>
-                        <td>{{ order.plate }}</td>
-                        <td>{{ order.cookLevel }}</td>
-                        <td>{{ order.note }}</td>
-                        <td>
-                            <a class="btn btn-success" href="#" role="button">Done</a>
-                            <a class="btn btn-warning" href="#" role="button">Amendment</a>
-                            <a class="btn btn-danger" href="#" role="button">Reject</a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <th scope="row">{{ order.userName }}</th>
+                            <td>
+                                {{ order.plate1 }}
+                                {{ order.plate2 }}
+                                {{ order.plate3 }}
+                                {{ order.plate4 }}
+                            </td>
+                            <td>
+                                {{ order.cookLevel1 }}
+                                {{ order.cookLevel2 }}
+                                {{ order.cookLevel3 }}
+                                {{ order.cookLevel4 }}
+                            </td>
+                            <td>
+                                {{ order.note1 }}
+                                {{ order.note2 }}
+                                {{ order.note3 }}
+                                {{ order.note4 }}
+                            </td>
+                            <td>
+                                <a class="btn btn-success" href="#" role="button">Done</a>
+                                <a class="btn btn-warning" href="#" role="button">Amendment</a>
+                                <a class="btn btn-danger" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+
                     {% endfor %}
                     </tbody>
                 </table>

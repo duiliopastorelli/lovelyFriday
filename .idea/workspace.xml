@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b27fde9-1b88-4e59-be74-6d6863b896a5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/order/manageOrder.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/order/manageOrder.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OrderBundle/Controller/OrderController.php" afterPath="$PROJECT_DIR$/src/OrderBundle/Controller/OrderController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OrderBundle/OrderBundle.php" afterPath="$PROJECT_DIR$/src/OrderBundle/OrderBundle.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OrderBundle/Entity/Orders.php" afterPath="$PROJECT_DIR$/src/OrderBundle/Entity/Orders.php" />
     </list>
     <ignored path="lovelyFriday.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +30,8 @@
       <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OrderBundle/Controller/OrderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="143" column="46" selection-start-line="143" selection-start-column="46" selection-end-line="143" selection-end-column="46" />
+            <state relative-caret-position="210">
+              <caret line="179" column="43" selection-start-line="179" selection-start-column="43" selection-end-line="179" selection-end-column="43" />
               <folding>
                 <element signature="e#42#72#0#PHP" expanded="true" />
               </folding>
@@ -38,11 +39,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderBundle.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/OrderBundle/OrderBundle.php">
+      <file leaf-file-name="manageOrder.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/order/manageOrder.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+            <state relative-caret-position="-218">
+              <caret line="14" column="144" selection-start-line="14" selection-start-column="144" selection-end-line="14" selection-end-column="144" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="49" column="55" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Orders.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/OrderBundle/Entity/Orders.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="877">
+              <caret line="343" column="7" selection-start-line="343" selection-start-column="7" selection-end-line="343" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -66,14 +87,14 @@
         <option value="$PROJECT_DIR$/app/Resources/views/order/editOrder.html.twig" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/order/manageOrder.html.twig" />
-        <option value="$PROJECT_DIR$/src/OrderBundle/Entity/Orders.php" />
         <option value="$PROJECT_DIR$/src/OrderBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/order/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/order/createOrder.html.twig" />
-        <option value="$PROJECT_DIR$/src/OrderBundle/Controller/OrderController.php" />
         <option value="$PROJECT_DIR$/src/OrderBundle/OrderBundle.php" />
+        <option value="$PROJECT_DIR$/src/OrderBundle/Entity/Orders.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/OrderBundle/Controller/OrderController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/order/manageOrder.html.twig" />
       </list>
     </option>
   </component>
@@ -353,12 +374,12 @@
       <workItem from="1464811982905" duration="5847000" />
       <workItem from="1464897083795" duration="5896000" />
       <workItem from="1465035558736" duration="2913000" />
-      <workItem from="1465041218554" duration="20941000" />
+      <workItem from="1465041218554" duration="23727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64334000" />
+    <option name="totallyTimeSpent" value="67120000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -667,13 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/order/manageOrder.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="25" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OrderBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -690,21 +704,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/order/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
           <folding>
-            <element signature="e#488#546#0#HTML" expanded="true" />
+            <element signature="e#488#546#0#HTML" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OrderBundle/OrderBundle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OrderBundle/Entity/Orders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="877">
+          <caret line="343" column="7" selection-start-line="343" selection-start-column="7" selection-end-line="343" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -716,28 +738,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OrderBundle/Entity/Orders.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="277">
+          <caret line="49" column="55" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OrderBundle/Controller/OrderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="143" column="46" selection-start-line="143" selection-start-column="46" selection-end-line="143" selection-end-column="46" />
+        <state relative-caret-position="210">
+          <caret line="179" column="43" selection-start-line="179" selection-start-column="43" selection-end-line="179" selection-end-column="43" />
           <folding>
             <element signature="e#42#72#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OrderBundle/OrderBundle.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/order/manageOrder.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+        <state relative-caret-position="-218">
+          <caret line="14" column="144" selection-start-line="14" selection-start-column="144" selection-end-line="14" selection-end-column="144" />
           <folding />
         </state>
       </provider>

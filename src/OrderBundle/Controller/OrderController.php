@@ -69,7 +69,12 @@ class OrderController extends Controller
                     ->findOneByidManOrder($idSubmitted);
 
                 if($idManOrderCheck != null){
-                    echo "it's a Management code";
+
+                    //Redirect on the Managment page
+                    return $this->redirectToRoute('manageOrder', array(
+                        'idManOrder' => $idSubmitted
+                    ));
+
                 } else {
                     //The code it's certainly not in the db...
                     echo "it's not in the db";
@@ -155,12 +160,31 @@ class OrderController extends Controller
      */
     public function manageOrderAction($idManOrder, Request $request)
     {
-        $orders = $this->getDoctrine()
+        //Check if the Management id is in the db
+        $idManOrderCheck = $this->getDoctrine()
             ->getRepository('OrderBundle:Orders')
-            ->findAll();
-        return $this->render('order/manageOrder.html.twig', array(
-            'orders' => $orders
-        ));
+            ->findOneByIdManOrder($idManOrder);
+
+        if($idManOrderCheck != null){
+
+            //Fetch the db for the orders
+            $orders = $this->getDoctrine()
+                ->getRepository('OrderBundle:Orders')
+                ->findByIdManOrder($idManOrder);
+
+            $idOrder = $orders[0]->getIdOrder();
+
+            return $this->render('order/manageOrder.html.twig', array(
+                'orders' => $orders,
+                'idOrder' => $idOrder,
+                'idManOrder' => $idManOrder
+            ));
+        }
+
+        //Code not in db, user redirected to hp
+        $this->addFlash('warning', 'Sorry, I can\'t find this order. Please double check it or create a new event.');
+        return $this->redirectToRoute('homepage');
+
     }
 
     /**

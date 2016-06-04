@@ -45,6 +45,12 @@
                             {{ flash_message }}
                         </div>
                     {% endfor %}
+
+                    {% for flash_message in app.session.flashbag.get('warning') %}
+                        <div class="alert alert-warning">
+                            {{ flash_message }}
+                        </div>
+                    {% endfor %}
                     {% block content %}{% endblock %}
                 </div>
             </div>
