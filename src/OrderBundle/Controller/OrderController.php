@@ -77,7 +77,6 @@ class OrderController extends Controller
             $order->setNote($note);
 
             $persist = $this->getDoctrine()->getManager();
-
             $persist->persist($order);
             $persist->flush();
 

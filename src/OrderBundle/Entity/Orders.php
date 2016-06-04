@@ -24,7 +24,7 @@ class Orders
     /**
      * @var string
      *
-     * @ORM\Column(name="idManOrder", type="string", length=12, unique=true)
+     * @ORM\Column(name="idManOrder", type="string", length=12)
      */
     private $idManOrder;
 
@@ -36,23 +36,30 @@ class Orders
     private $idOrder;
 
     /**
+     * @var date
+     *
+     * @ORM\Column(name="creationDate", type="date", nullable=true)
+     */
+    private $creationDate;
+
+    /**
      * @var string
      *
-     * @ORM\Column(name="userName", type="string", length=30, unique=true)
+     * @ORM\Column(name="userName", type="string", length=30, nullable=true)
      */
     private $userName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="plate", type="string", length=50)
+     * @ORM\Column(name="plate", type="string", length=50, nullable=true)
      */
     private $plate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cookLevel", type="string", nullable=true)
+     * @ORM\Column(name="cookLevel", type="string", length=10, nullable=true)
      */
     private $cookLevel;
 
@@ -216,5 +223,29 @@ class Orders
     public function getNote()
     {
         return $this->note;
+    }
+
+    /**
+     * Set creationDate
+     *
+     * @param \DateTime $creationDate
+     *
+     * @return Orders
+     */
+    public function setCreationDate($creationDate)
+    {
+        $this->creationDate = $creationDate;
+
+        return $this;
+    }
+
+    /**
+     * Get creationDate
+     *
+     * @return \DateTime
+     */
+    public function getCreationDate()
+    {
+        return $this->creationDate;
     }
 }
