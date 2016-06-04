@@ -212,10 +212,10 @@ class OrderController extends Controller
 
         $form = $this->createFormBuilder($order)
             ->add('userName', TextType::class, array('attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
-            ->add('plate', TextType::class, array('attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
-            ->add('cookLevel', ChoiceType::class, array('choices' => array('None' => 'None', 'Almost raw' => 'Almost raw', 'Normal' => 'Normal', 'Well Done' => 'Well Done'), 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
-            ->add('note', TextType::class, array('attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
-            ->add('submit', SubmitType::class, array('label' => 'Create Order','attr' => array('class' => 'btn btn-primary','style' => 'margin-bottom:15px')))
+            ->add('plate1', TextType::class, array('attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('cookLevel1', ChoiceType::class, array('choices' => array('None' => 'None', 'Almost raw' => 'Almost raw', 'Normal' => 'Normal', 'Well Done' => 'Well Done'), 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('note1', TextType::class, array('attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('submit1', SubmitType::class, array('label' => 'Create Order','attr' => array('class' => 'btn btn-primary','style' => 'margin-bottom:15px')))
             ->getForm();
 
         $form->handleRequest($request);
@@ -223,8 +223,11 @@ class OrderController extends Controller
         if($form->isSubmitted() && $form->isValid()){
 
             //Get Data from the form
-            $idManOrder = "test1";
-            $idOrder = "test1";
+            $thisOrder = $this->getDoctrine()
+                ->getRepository('OrderBundle:Orders')
+                ->findOneByidOrder($idOrder);
+            $idManOrder = $thisOrder[0]->getIdManOrder();
+
             $userName = $form['userName']->getData();
             $plate = $form['plate']->getData();
             $cookLevel = $form['cookLevel']->getData();
