@@ -41,7 +41,6 @@ class OrderController extends Controller
 
             if($idOrderCheck != null){
 
-                var_dump($idOrderCheck);
                 $idManOrder = $idOrderCheck->getIdManOrder();
 
                 //Add the username to the db
@@ -105,23 +104,44 @@ class OrderController extends Controller
         //Check if the POST has valid value
         if($form->isSubmitted() && $form->isValid()){
             do {
-                $isUnique = false;
+                $areUnique = false;
 
                 //Generate random
                 $generatedIdManOrder = OrderBundle::getCode();
+                $generatedIdOrder = OrderBundle::getCode();
 
                 $idManOrderCheck = $this->getDoctrine()
                     ->getRepository('OrderBundle:Orders')
                     ->findOneByidManOrder($generatedIdManOrder);
 
-                if ($idManOrderCheck === null){
-                    $isUnique = true;
+                $idOrderCheck = $this->getDoctrine()
+                    ->getRepository('OrderBundle:Orders')
+                    ->findOneByidOrder($generatedIdOrder);
+
+                if ($idManOrderCheck === null && $idOrderCheck === null){
+                    $areUnique = true;
                 }
-            } while ($isUnique===false);
+            } while ($areUnique===false);
+
+            //Add the username to the db
+            //Get Data from the form
+            $idManOrder = $generatedIdManOrder;
+            $idOrder = $generatedIdOrder;
+            $userName = $form['userName']->getData();
+
+            //Prepare the data to persist them
+            $eventStart->setIdManOrder($idManOrder);
+            $eventStart->setIdOrder($idOrder);
+            $eventStart->setUserName($userName);
+
+            $persist = $this->getDoctrine()->getManager();
+            $persist->persist($eventStart);
+            $persist->flush();
 
             //Redirect to the management page
             return $this->redirectToRoute('manageOrder', array(
-                'idManOrder' => $generatedIdManOrder
+                'idManOrder' => $generatedIdManOrder,
+                'idOrder' => $generatedIdOrder
             ));
         }
         

@@ -7,7 +7,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 class OrderBundle extends Bundle
 {
     //Generate random codes for the orders
-    private function generateNewCode($length = 20) {
+    private function generateNewCode($length = 12) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';

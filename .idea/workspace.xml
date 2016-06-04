@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2b27fde9-1b88-4e59-be74-6d6863b896a5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/order/createOrder.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/order/createOrder.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/order/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/order/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OrderBundle/Controller/OrderController.php" afterPath="$PROJECT_DIR$/src/OrderBundle/Controller/OrderController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OrderBundle/OrderBundle.php" afterPath="$PROJECT_DIR$/src/OrderBundle/OrderBundle.php" />
     </list>
@@ -28,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OrderBundle/Controller/OrderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="123" column="52" selection-start-line="123" selection-start-column="52" selection-end-line="123" selection-end-column="52" />
+            <state relative-caret-position="307">
+              <caret line="143" column="46" selection-start-line="143" selection-start-column="46" selection-end-line="143" selection-end-column="46" />
               <folding>
                 <element signature="e#42#72#0#PHP" expanded="true" />
               </folding>
@@ -40,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderBundle.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OrderBundle.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/OrderBundle/OrderBundle.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="91">
+              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -74,8 +72,8 @@
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/order/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/order/createOrder.html.twig" />
-        <option value="$PROJECT_DIR$/src/OrderBundle/OrderBundle.php" />
         <option value="$PROJECT_DIR$/src/OrderBundle/Controller/OrderController.php" />
+        <option value="$PROJECT_DIR$/src/OrderBundle/OrderBundle.php" />
       </list>
     </option>
   </component>
@@ -355,12 +353,12 @@
       <workItem from="1464811982905" duration="5847000" />
       <workItem from="1464897083795" duration="5896000" />
       <workItem from="1465035558736" duration="2913000" />
-      <workItem from="1465041218554" duration="20414000" />
+      <workItem from="1465041218554" duration="20941000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63807000" />
+    <option name="totallyTimeSpent" value="64334000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -726,21 +724,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OrderBundle/OrderBundle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OrderBundle/Controller/OrderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="123" column="52" selection-start-line="123" selection-start-column="52" selection-end-line="123" selection-end-column="52" />
+        <state relative-caret-position="307">
+          <caret line="143" column="46" selection-start-line="143" selection-start-column="46" selection-end-line="143" selection-end-column="46" />
           <folding>
             <element signature="e#42#72#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OrderBundle/OrderBundle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
