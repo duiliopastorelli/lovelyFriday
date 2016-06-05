@@ -36,6 +36,13 @@ class Orders
     private $idOrder;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="idJoinOrder", type="string", length=12, nullable=true)
+     */
+    private $idJoinOrder;
+
+    /**
      * @var date
      *
      * @ORM\Column(name="creationDate", type="date", nullable=true)
@@ -597,5 +604,29 @@ class Orders
     public function getNote4()
     {
         return $this->note4;
+    }
+
+    /**
+     * Set idJoinOrder
+     *
+     * @param string $idJoinOrder
+     *
+     * @return Orders
+     */
+    public function setIdJoinOrder($idJoinOrder)
+    {
+        $this->idJoinOrder = $idJoinOrder;
+
+        return $this;
+    }
+
+    /**
+     * Get idJoinOrder
+     *
+     * @return string
+     */
+    public function getIdJoinOrder()
+    {
+        return $this->idJoinOrder;
     }
 }

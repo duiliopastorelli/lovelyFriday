@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
 
 class OrderController extends Controller
@@ -43,6 +44,22 @@ class OrderController extends Controller
 
                 $idManOrder = $idOrderCheck->getIdManOrder();
 
+                //Generate the random idJoinCode
+                do {
+                    $isUnique = false;
+
+                    //Generate random code
+                    $generatedIdJoinOrder = OrderBundle::getCode();
+
+                    $idJoinOrderCheck = $this->getDoctrine()
+                        ->getRepository('OrderBundle:Orders')
+                        ->findOneByIdJoinOrder($generatedIdJoinOrder);
+
+                    if ($idJoinOrderCheck === null){
+                        $isUnique = true;
+                    }
+                } while ($isUnique===false);
+
                 //Add the username to the db
                 //Get Data from the form
                 $idOrder = $idSubmitted;
@@ -51,6 +68,7 @@ class OrderController extends Controller
                 //Prepare the data to persist them
                 $orderStart->setIdManOrder($idManOrder);
                 $orderStart->setIdOrder($idOrder);
+                $orderStart->setIdJoinOrder($generatedIdJoinOrder);
                 $orderStart->setUserName($userName);
 
                 $persist = $this->getDoctrine()->getManager();
@@ -59,10 +77,11 @@ class OrderController extends Controller
 
                 //Redirect to the Order page
                 return $this->redirectToRoute('createOrder', array(
-                    'idOrder' => $idSubmitted,
+                    'idJoinOrder' => $generatedIdJoinOrder,
                     'idTested' => 1));
-            }
-            else {
+
+            } else {
+
                 //Check if the code submitted is a idManCode
                 $idManOrderCheck = $this->getDoctrine()
                     ->getRepository('OrderBundle:Orders')
@@ -150,7 +169,7 @@ class OrderController extends Controller
             ));
         }
         
-        return $this->render('order/createOrder.html.twig', array(
+        return $this->render('order/newEvent.html.twig', array(
             'form' => $form->createView()
         ));
     }
@@ -188,20 +207,20 @@ class OrderController extends Controller
     }
 
     /**
-     * @Route("/createOrder/{idOrder}", name="createOrder", defaults={"idOrder" = null})
+     * @Route("/createOrder/{idJoinOrder}", name="createOrder", defaults={"idJoinOrder" = null})
      */
-    public function createOrderAction($idOrder, $idTested = null, Request $request)
+    public function createOrderAction($idJoinOrder, $idTested = null, Request $request)
     {
 
         //Check the code if it's not already checked
         if($idTested === null){
 
             //Check if the id submitted is already present in the db as a idOrder
-            $idOrderCheck = $this->getDoctrine()
+            $idJoinOrderCheck = $this->getDoctrine()
                 ->getRepository('OrderBundle:Orders')
-                ->findOneByidOrder($idOrder);
+                ->findOneByidJoinOrder($idJoinOrder);
 
-            if($idOrderCheck === null){
+            if($idJoinOrderCheck === null){
                 $this->addFlash('notice', 'Sorry, I can\'t find this order. Please double check it or create a new event.');
 
                 return $this->redirectToRoute('homepage');
@@ -211,10 +230,18 @@ class OrderController extends Controller
         $order = new Orders;
 
         $form = $this->createFormBuilder($order)
-            ->add('userName', TextType::class, array('attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
             ->add('plate1', TextType::class, array('attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
-            ->add('cookLevel1', ChoiceType::class, array('choices' => array('None' => 'None', 'Almost raw' => 'Almost raw', 'Normal' => 'Normal', 'Well Done' => 'Well Done'), 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
-            ->add('note1', TextType::class, array('attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('cookLevel1', ChoiceType::class, array('choices' => array('---' => '---', 'Almost raw' => 'Almost raw', 'Normal' => 'Normal', 'Well Done' => 'Well Done'), 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('note1', TextareaType::class, array('attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('plate2', TextType::class, array('required' => false, 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('cookLevel2', ChoiceType::class, array('required' => false, 'choices' => array('---' => '---', 'Almost raw' => 'Almost raw', 'Normal' => 'Normal', 'Well Done' => 'Well Done'), 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('note2', TextareaType::class, array('required' => false, 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('plate3', TextType::class, array('required' => false, 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('cookLevel3', ChoiceType::class, array('required' => false, 'choices' => array('---' => '---', 'Almost raw' => 'Almost raw', 'Normal' => 'Normal', 'Well Done' => 'Well Done'), 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('note3', TextareaType::class, array('required' => false, 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('plate4', TextType::class, array('required' => false, 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('cookLevel4', ChoiceType::class, array('required' => false, 'choices' => array('---' => '---', 'Almost raw' => 'Almost raw', 'Normal' => 'Normal', 'Well Done' => 'Well Done'), 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('note4', TextareaType::class, array('required' => false, 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
             ->add('submit1', SubmitType::class, array('label' => 'Create Order','attr' => array('class' => 'btn btn-primary','style' => 'margin-bottom:15px')))
             ->getForm();
 
@@ -225,41 +252,55 @@ class OrderController extends Controller
             //Get Data from the form
             $thisOrder = $this->getDoctrine()
                 ->getRepository('OrderBundle:Orders')
-                ->findOneByidOrder($idOrder);
-            $idManOrder = $thisOrder[0]->getIdManOrder();
+                ->findOneByIdJoinOrder($idJoinOrder);
 
-            $userName = $form['userName']->getData();
-            $plate = $form['plate']->getData();
-            $cookLevel = $form['cookLevel']->getData();
-            $note = $form['note']->getData();
+            $idManOrder = $thisOrder->getIdManOrder();
+            $idOrder = $thisOrder->getIdOrder();
+            $userName = $thisOrder->getUserName();
+            $plate1 = $form['plate1']->getData();
+            $plate2 = $form['plate2']->getData();
+            $plate3 = $form['plate3']->getData();
+            $plate4 = $form['plate4']->getData();
+            $cookLevel1 = $form['cookLevel1']->getData();
+            $cookLevel2 = $form['cookLevel2']->getData();
+            $cookLevel3 = $form['cookLevel3']->getData();
+            $cookLevel4 = $form['cookLevel4']->getData();
+            $note1 = $form['note1']->getData();
+            $note2 = $form['note2']->getData();
+            $note3 = $form['note3']->getData();
+            $note4 = $form['note4']->getData();
 
             //Prepare the data to persist them
             $order->setIdManOrder($idManOrder);
             $order->setIdOrder($idOrder);
+            $order->setIdJoinOrder($idJoinOrder);
             $order->setUserName($userName);
-            $order->setPlate($plate);
-            $order->setCookLevel($cookLevel);
-            $order->setNote($note);
+            $order->setPlate1($plate1);
+            $order->setPlate2($plate2);
+            $order->setPlate3($plate3);
+            $order->setPlate4($plate4);
+            $order->setCookLevel1($cookLevel1);
+            $order->setCookLevel2($cookLevel2);
+            $order->setCookLevel3($cookLevel3);
+            $order->setCookLevel4($cookLevel4);
+            $order->setNote1($note1);
+            $order->setNote2($note2);
+            $order->setNote3($note3);
+            $order->setNote4($note4);
 
             $persist = $this->getDoctrine()->getManager();
             $persist->persist($order);
             $persist->flush();
 
-            $this->addFlash('notice', 'Added to the database! :)');
+            $this->addFlash('notice', 'Hey! Well Done! You just sent the order to the order manager! Now sit down and relax ;)');
 
             return $this->redirectToRoute('homepage');
         }
 
-        return $this->render('order/createOrder.html.twig', array(
-            'form' => $form->createView()
+        return $this->render('order/newOrder.html.twig', array(
+            'form' => $form->createView(),
+            'idJoinOrder' => $idJoinOrder
         ));
     }
-
-    /**
-     * @Route("/editOrder/{idOrder}", name="editOrder")
-     */
-    public function editOrderAction($idOrder, Request $request)
-    {
-        return $this->render('order/editOrder.html.twig');
-    }
+    
 }

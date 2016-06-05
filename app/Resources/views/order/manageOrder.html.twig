@@ -23,7 +23,7 @@
                         <th>Order</th>
                         <th>How cooked</th>
                         <th>Note</th>
-                        <th>Actions</th>
+                        <th>Actions - Not available yet, sorry :(</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -32,26 +32,53 @@
                             <th scope="row">{{ order.userName }}</th>
                             <td>
                                 {{ order.plate1 }}
-                                {{ order.plate2 }}
-                                {{ order.plate3 }}
-                                {{ order.plate4 }}
+
+                                {% if order.plate2 %}
+                                    <br />{{ order.plate2 }}
+                                {% endif %}
+
+                                {% if order.plate3 %}
+                                    <br />{{ order.plate3 }}
+                                {% endif %}
+
+                                {% if order.plate4 %}
+                                    <br />{{ order.plate4 }}
+                                {% endif %}
                             </td>
                             <td>
                                 {{ order.cookLevel1 }}
-                                {{ order.cookLevel2 }}
-                                {{ order.cookLevel3 }}
-                                {{ order.cookLevel4 }}
+
+                                {% if order.cookLevel2 %}
+                                    <br />{{ order.cookLevel2 }}
+                                {% endif %}
+
+                                {% if order.cookLevel3 %}
+                                    <br />{{ order.cookLevel3 }}
+                                {% endif %}
+
+                                {% if order.cookLevel4 %}
+                                    <br />{{ order.cookLevel4 }}
+                                {% endif %}
                             </td>
                             <td>
                                 {{ order.note1 }}
-                                {{ order.note2 }}
-                                {{ order.note3 }}
-                                {{ order.note4 }}
+
+                                {% if order.note2 %}
+                                    <br/>{{ order.note2 }}
+                                {% endif %}
+
+                                {% if order.note3 %}
+                                    <br/>{{ order.note3 }}
+                                {% endif %}
+
+                                {% if order.note4 %}
+                                    <br/>{{ order.note4 }}
+                                {% endif %}
                             </td>
                             <td>
-                                <a class="btn btn-success" href="#" role="button">Done</a>
-                                <a class="btn btn-warning" href="#" role="button">Amendment</a>
-                                <a class="btn btn-danger" href="#" role="button">Reject</a>
+                                <a class="btn btn-success disabled" href="#" role="button">Done</a>
+                                <a class="btn btn-warning disabled" href="#" role="button">Amendment</a>
+                                <a class="btn btn-danger disabled" href="#" role="button">Reject</a>
                             </td>
                         </tr>
 
