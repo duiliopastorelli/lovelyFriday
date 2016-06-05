@@ -8,12 +8,13 @@
 
                 <div class="alert alert-success">
                     <p>Hey Manager! Remember to share with the other folks the "Order Code". They need it to join the party!</p>
-                    <p class="lead">Order code: {{ idOrder }}</p>
+                    <p class="lead">Order Code: {{ idOrder }}</p>
+                    <p class="lead">Full Link: <a href="{{ url('homepage') }}{{ idOrder }}">{{ url('homepage') }}{{ idOrder }}</a></p>
                 </div>
 
                 <div class="alert alert-danger">
                     <p>And this one is the code to manage the event. <b>DON'T</b> share it, just save it somewhere as it's your key to return to this page again!!!</p>
-                    <p class="lead">Management code: {{ idManOrder }}</p>
+                    <p class="lead">Management Code: {{ idManOrder }}</p>
                 </div>
 
                 <table class="table table-striped">
@@ -28,59 +29,62 @@
                     </thead>
                     <tbody>
                     {% for order in orders %}
-                        <tr>
-                            <th scope="row">{{ order.userName }}</th>
-                            <td>
-                                {{ order.plate1 }}
 
-                                {% if order.plate2 %}
-                                    <br />{{ order.plate2 }}
-                                {% endif %}
+                        {% if order.plate1 or order.plate2 or order.plate3 or order.plate4 %}
+                            <tr>
+                                <th scope="row">{{ order.userName }}</th>
+                                <td class="man-order-plate">
+                                    {{ order.plate1 }}
 
-                                {% if order.plate3 %}
-                                    <br />{{ order.plate3 }}
-                                {% endif %}
+                                    {% if order.plate2 %}
+                                        <br />{{ order.plate2 }}
+                                    {% endif %}
 
-                                {% if order.plate4 %}
-                                    <br />{{ order.plate4 }}
-                                {% endif %}
-                            </td>
-                            <td>
-                                {{ order.cookLevel1 }}
+                                    {% if order.plate3 %}
+                                        <br />{{ order.plate3 }}
+                                    {% endif %}
 
-                                {% if order.cookLevel2 %}
-                                    <br />{{ order.cookLevel2 }}
-                                {% endif %}
+                                    {% if order.plate4 %}
+                                        <br />{{ order.plate4 }}
+                                    {% endif %}
+                                </td>
+                                <td class="man-order-cook">
+                                    {{ order.cookLevel1 }}
 
-                                {% if order.cookLevel3 %}
-                                    <br />{{ order.cookLevel3 }}
-                                {% endif %}
+                                    {% if order.cookLevel2 %}
+                                        <br />{{ order.cookLevel2 }}
+                                    {% endif %}
 
-                                {% if order.cookLevel4 %}
-                                    <br />{{ order.cookLevel4 }}
-                                {% endif %}
-                            </td>
-                            <td>
-                                {{ order.note1 }}
+                                    {% if order.cookLevel3 %}
+                                        <br />{{ order.cookLevel3 }}
+                                    {% endif %}
 
-                                {% if order.note2 %}
-                                    <br/>{{ order.note2 }}
-                                {% endif %}
+                                    {% if order.cookLevel4 %}
+                                        <br />{{ order.cookLevel4 }}
+                                    {% endif %}
+                                </td>
+                                <td class="man-order-note">
+                                    {{ order.note1 }}
 
-                                {% if order.note3 %}
-                                    <br/>{{ order.note3 }}
-                                {% endif %}
+                                    {% if order.note2 %}
+                                        <br/>{{ order.note2 }}
+                                    {% endif %}
 
-                                {% if order.note4 %}
-                                    <br/>{{ order.note4 }}
-                                {% endif %}
-                            </td>
-                            <td>
-                                <a class="btn btn-success disabled" href="#" role="button">Done</a>
-                                <a class="btn btn-warning disabled" href="#" role="button">Amendment</a>
-                                <a class="btn btn-danger disabled" href="#" role="button">Reject</a>
-                            </td>
-                        </tr>
+                                    {% if order.note3 %}
+                                        <br/>{{ order.note3 }}
+                                    {% endif %}
+
+                                    {% if order.note4 %}
+                                        <br/>{{ order.note4 }}
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a class="btn btn-success disabled" href="#" role="button">Done</a>
+                                    <a class="btn btn-warning disabled" href="#" role="button">Amendment</a>
+                                    <a class="btn btn-danger disabled" href="#" role="button">Reject</a>
+                                </td>
+                            </tr>
+                        {% endif %}
 
                     {% endfor %}
                     </tbody>

@@ -15,15 +15,15 @@ use Symfony\Component\HttpFoundation\Request;
 class OrderController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/{idJoinOrder}", defaults={"idJoinOrder" = null}, name="homepage")
      */
-    public function indexAction(Request $request)
+    public function indexAction($idJoinOrder, Request $request)
     {
         //Generate the form to get the order id from the user
         $orderStart = new Orders;
         $form = $this->createFormBuilder($orderStart)
             ->add('userName', TextType::class, array('label' => 'Pick an user name:','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
-            ->add('idOrder', TextType::class, array('label' => 'Insert your "order code" here:','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('idOrder', TextType::class, array('data' => $idJoinOrder, 'label' => 'Insert your "order code" here:','attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
             ->add('submit', SubmitType::class, array('label' => 'GO! ->','attr' => array('class' => 'btn btn-success center-block','style' => 'margin-bottom:15px')))
             ->getForm();
 
@@ -95,8 +95,11 @@ class OrderController extends Controller
                     ));
 
                 } else {
-                    //The code it's certainly not in the db...
-                    echo "it's not in the db";
+
+                    //Code not in db, user redirected to hp
+                    $this->addFlash('warning', 'Sorry, I can\'t find this order. Please double check it or create a new event.');
+                    return $this->redirectToRoute('homepage');
+
                 }
 
             }

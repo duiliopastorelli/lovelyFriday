@@ -59,84 +59,84 @@ class Orders
     /**
      * @var string
      *
-     * @ORM\Column(name="plate1", type="string", length=50, nullable=true)
+     * @ORM\Column(name="plate1", type="string", length=50, nullable=true, options={"default":0})
      */
     private $plate1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cookLevel1", type="string", length=10, nullable=true)
+     * @ORM\Column(name="cookLevel1", type="string", length=10, nullable=true, options={"default":0})
      */
     private $cookLevel1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="note1", type="string", length=150, nullable=true)
+     * @ORM\Column(name="note1", type="string", length=150, nullable=true, options={"default":0})
      */
     private $note1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="plate2", type="string", length=50, nullable=true)
+     * @ORM\Column(name="plate2", type="string", length=50, nullable=true, options={"default":0})
      */
     private $plate2;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cookLevel2", type="string", length=10, nullable=true)
+     * @ORM\Column(name="cookLevel2", type="string", length=10, nullable=true, options={"default":0})
      */
     private $cookLevel2;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="note2", type="string", length=150, nullable=true)
+     * @ORM\Column(name="note2", type="string", length=150, nullable=true, options={"default":0})
      */
     private $note2;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="plate3", type="string", length=50, nullable=true)
+     * @ORM\Column(name="plate3", type="string", length=50, nullable=true, options={"default":0})
      */
     private $plate3;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cookLevel3", type="string", length=10, nullable=true)
+     * @ORM\Column(name="cookLevel3", type="string", length=10, nullable=true, options={"default":0})
      */
     private $cookLevel3;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="note3", type="string", length=150, nullable=true)
+     * @ORM\Column(name="note3", type="string", length=150, nullable=true, options={"default":0})
      */
     private $note3;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="plate4", type="string", length=50, nullable=true)
+     * @ORM\Column(name="plate4", type="string", length=50, nullable=true, options={"default":0})
      */
     private $plate4;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cookLevel4", type="string", length=10, nullable=true)
+     * @ORM\Column(name="cookLevel4", type="string", length=10, nullable=true, options={"default":0})
      */
     private $cookLevel4;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="note4", type="string", length=150, nullable=true)
+     * @ORM\Column(name="note4", type="string", length=150, nullable=true, options={"default":0})
      */
     private $note4;
 
