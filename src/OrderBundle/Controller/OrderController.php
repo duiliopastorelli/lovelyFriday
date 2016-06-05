@@ -234,8 +234,8 @@ class OrderController extends Controller
 
         $form = $this->createFormBuilder($order)
             ->add('plate1', TextType::class, array('attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
-            ->add('cookLevel1', ChoiceType::class, array('choices' => array('---' => '---', 'Almost raw' => 'Almost raw', 'Normal' => 'Normal', 'Well Done' => 'Well Done'), 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
-            ->add('note1', TextareaType::class, array('attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('cookLevel1', ChoiceType::class, array('required' => false, 'choices' => array('---' => '---', 'Almost raw' => 'Almost raw', 'Normal' => 'Normal', 'Well Done' => 'Well Done'), 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
+            ->add('note1', TextareaType::class, array('required' => false, 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
             ->add('plate2', TextType::class, array('required' => false, 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
             ->add('cookLevel2', ChoiceType::class, array('required' => false, 'choices' => array('---' => '---', 'Almost raw' => 'Almost raw', 'Normal' => 'Normal', 'Well Done' => 'Well Done'), 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
             ->add('note2', TextareaType::class, array('required' => false, 'attr' => array('class' => 'form-control','style' => 'margin-bottom:15px')))
