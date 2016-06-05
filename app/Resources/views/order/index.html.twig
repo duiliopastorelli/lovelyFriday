@@ -1,6 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
+    <style>
+        .github{
+            display: block;
+            float: right;
+            width: 172px;
+            height: 60px;
+            background: url("{{ asset('github.png') }}/");
+        }
+    </style>
+    <a href="https://github.com/duiliopastorelli/lovelyFriday" target="_blank"><span class="github"></span></a>
+
     <h1 class="page-header">Ready to ride the Invisible Pink Unicorn?</h1>
     <p class="lead">Hungry? Don't worry, you're just a few steps from your meal!</p>
 
